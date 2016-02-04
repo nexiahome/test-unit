@@ -11,10 +11,7 @@ module Test
         TESTUNIT_PREFIX = __FILE__.split(TESTUNIT_FILE_SEPARATORS)[0..-3]
         TESTUNIT_RB_FILE = /\.rb\Z/
 
-        POWERASSERT_PREFIX =
-          defined?(PowerAssert) ?
-            PowerAssert.method(:start).source_location[0].split(TESTUNIT_FILE_SEPARATORS)[0..-2] :
-            nil
+        POWERASSERT_PREFIX = nil
 
         module_function
         def filter_backtrace(backtrace, prefix=nil)
